@@ -22,7 +22,7 @@ channel number that was initially encrypted.
 previously encrypted text to have more protection. Remember
 the channel numbers when going backwards.
 */
-const int channel_number=87;
+const int channel_number=7;
 
 string encriptar(string texto){
     string output;
@@ -63,8 +63,8 @@ int main(){
     int opcion;
     string texto;
     while(!((opcion==1)||(opcion==2)||(opcion==-1))){
-        cout<<"1=Encrypt || 2=Decrypt"<<endl;
-        cout<<"Enter your option(1|2): ";
+        cout<<"1=Encrypt | 2=Decrypt | -1=Exit"<<endl;
+        cout<<"Enter your option(1|2|-1): ";
         cin>>opcion;
 
         switch(opcion)
@@ -79,6 +79,8 @@ int main(){
             getline(cin>>ws,texto);
             cout<<endl<<"Descrypted text:"<<endl<<"-->"<<desencriptar(texto)<<"<--"<<endl;
             break;
+        case -1:
+            return false;
         }
         opcion=0;
     }
